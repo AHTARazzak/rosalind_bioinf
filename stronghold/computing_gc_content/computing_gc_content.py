@@ -16,4 +16,4 @@ with open(the_fasta_file) as fasta_file:
 
 
 print(highest_desc)
-print(highest_GC)
+print("%.5f" % highest_GC)
