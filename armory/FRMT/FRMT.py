@@ -26,5 +26,5 @@ the_combos = sorted(the_combos, key=lambda x: x[1])
 
 shortest_seq = Entrez.efetch(db="nucleotide", id=[the_combos[0][0]], rettype="fasta")
 os.system("esearch -db nucleotide -query " + the_combos[0][0] + " | efetch -format fasta > " + the_combos[0][0])
-#print(final_record.id)
-#print(final_record.seq)
+
+#Ali Razzak
