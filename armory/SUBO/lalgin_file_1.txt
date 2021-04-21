@@ -1,0 +1,431 @@
+# lalign36 file_1.txt file_2.txt
+LALIGN finds non-overlapping local alignments
+ version 36.3.8h Aug, 2019
+Please cite:
+ X. Huang and W. Miller (1991) Adv. Appl. Math. 12:373-381
+
+Query: file_1.txt
+  1>>>Rosalind_3821 - 898 nt
+Library: file_2.txt
+      904 residues in     1 sequences
+
+Statistics: (shuffled [500]) MLE statistics: Lambda= 0.1526;  K=0.08696
+ statistics sampled from 1 (1) to 500 sequences
+Threshold: E() < 0.2 score: 84
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.2 Nov 2010)
+Parameters: +5/-4 matrix (5:-4), open/ext: -12/-4
+ Scan time:  0.110
+
+>>Rosalind_9586                                           (904 nt)
+ Waterman-Eggert score: 444;  101.3 bits; E(1) <  2.6e-25
+59.8% identity (59.8% similar) in 408 nt overlap (366-758:395-794)
+
+         370       380       390       400       410       420     
+Rosali GTGTTCCCTCAAGGGATGCTTGACGCGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTC
+       :: :: : : ::::    : : : : ::::::::::::::::::::::::::::::::::
+Rosali GTATTTCGTGAAGGACGTCGTCA-GGGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTC
+          400       410        420       430       440       450   
+
+         430       440       450       460       470       480     
+Rosali TGATCAGATCGGATTTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGCCG
+       :::::: :   : :  ::::::::::::::::::::::::::::::::::::::: :  :
+Rosali TGATCATAATAGCTAAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATC-GGGG
+           460       470       480       490       500        510  
+
+         490       500       510       520         530       540   
+Rosali TGTGAGGAAATCGTAATGTCTGCAGTGTTCAGACTAGGACTA--GGTGGCCATAACCATA
+        : :::  ::  :    : : :::      ::: :  : :::  :  : : ::   :   
+Rosali AGGGAGCGAAGTGGCCCGCCGGCACCACGAAGAGTCTGGCTAATGCAGTCGATCCTCGCC
+            520       530       540       550       560       570  
+
+           550       560       570          580       590          
+Rosali GTAGTACGCTTGCGGGCCACATTATCAGGTGGCG---ATGAGGTCACACAGA-----GAA
+          :  ::   :  :  :: :  ::  :: :  :   ::    :: :   ::     :: 
+Rosali AGGGCTCGACCGAAGAGCAGACGATGTGGAGAGGCATATTCCATCCCTAGGATGGACGAC
+            580       590       600       610       620       630  
+
+          600       610       620       630          640       650 
+Rosali AC-TGACATAATGCGGCTTTCACTGTCACGACGCGCAA---CCGCCTTAACCGATGAGAG
+       :: :::::  : ::          :::  : ::  : :   : :  ::  : ::: : ::
+Rosali ACGTGACAATAAGCCTAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAAAG
+            640       650       660       670       680       690  
+
+             660        670       680       690       700       710
+Rosali CCAACGAACCGACGAAGA-CGACGCGCTACAATTTCGCGGAATGGCGTCGACCTTTTCGG
+           ::    :: : ::  ::   :: :  :  :   ::: :: :  :   ::    :  
+Rosali G---CGGTGTGAAGCAGGTCGTGTCGTTCGAGGT---CGGTATTGTCTGATCCACACCCC
+               700       710       720          730       740      
+
+              720       730       740       750        
+Rosali AAAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTAATGA
+          ::::::::::::::::::::::::::::::::::::::::::: :
+Rosali GCTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTAATTA
+        750       760       770       780       790    
+
+>--
+ Waterman-Eggert score: 398;  91.2 bits; E(1) <  2.9e-22
+87.4% identity (87.4% similar) in 103 nt overlap (392-494:222-324)
+
+             400       410       420       430       440       450 
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATTTGAAGCAGGTC
+       ::::::::::::::::::::::::::::::::::::::: :  :::   :::::::::::
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTGGGCGGGGATGAAGCAGGTC
+             230       240       250       260       270       280 
+
+             460       470       480       490    
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCAGCCGTGTGAGGAA
+       :::::::::::::::::::::::::::::  ::  : :  :::
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCGACCACGAGGCGAA
+             290       300       310       320    
+
+>--
+ Waterman-Eggert score: 391;  89.6 bits; E(1) <  8.5e-22
+93.3% identity (93.3% similar) in 89 nt overlap (392-480:650-738)
+
+             400       410       420       430       440       450 
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATTTGAAGCAGGTC
+       :::::::::::::::::::::::::::::::::::::::: :   : : :::::::::::
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAAAGGCGGTGTGAAGCAGGTC
+     650       660       670       680       690       700         
+
+             460       470       480
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATC
+       :::::::::::::::::::::::::::::
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATC
+     710       720       730        
+
+>--
+ Waterman-Eggert score: 371;  85.2 bits; E(1) <  1.8e-20
+88.3% identity (88.3% similar) in 94 nt overlap (392-485:272-365)
+
+             400       410       420       430       440       450 
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATTTGAAGCAGGTC
+       :::::::::::::::::::::::::::::::::::::::      ::   ::::::::::
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCGACCACGAGGCGAAGCAGGTC
+             280       290       300       310       320       330 
+
+             460       470       480     
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCAGCCG
+       :::::::::::::::::::::::::::::: : :
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCATCTG
+             340       350       360     
+
+>--
+ Waterman-Eggert score: 365;  83.9 bits; E(1) <  4.5e-20
+89.0% identity (89.0% similar) in 91 nt overlap (390-480:698-788)
+
+     390       400       410       420       430       440         
+Rosali GCGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATTTGAAGCAGG
+       : :::::::::::::::::::::::::::::::::::::::    :     :::::::::
+Rosali GTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCCACACCCCGCTGAAGCAGG
+       700       710       720       730       740       750       
+
+     450       460       470       480
+Rosali TCGTGTCGTTCGAGGTCGGTATTGTCTGATC
+       :::::::::::::::::::::::::::::::
+Rosali TCGTGTCGTTCGAGGTCGGTATTGTCTGATC
+       760       770       780        
+
+>--
+ Waterman-Eggert score: 342;  78.8 bits; E(1) <  1.5e-18
+59.9% identity (59.9% similar) in 411 nt overlap (387-774:317-708)
+
+        390       400       410       420       430       440      
+Rosali GACGCGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATT-TGAAG
+       :: ::::::::::::::::::::::::::::::::::::::::::  :: : :: : :::
+Rosali GAGGCGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCA--TCTGCTTCTCAAG
+        320       330       340       350       360         370    
+
+         450       460        470       480       490         500  
+Rosali CAGGTCGTGTCGTTCG-AGGTCGGTATTGTCTGATCAGCCGTGTGAGGAAATC--GTAAT
+        :: :: ::: :   : :: :  :::::   :::    :   :: ::: :: :  ::  :
+Rosali TAGCTC-TGTAGCCAGGAGAT--GTATTTCGTGAAGGACGTCGTCAGGGAAGCAGGTCGT
+          380        390         400       410       420       430 
+
+            510       520            530       540        550      
+Rosali GTCTGCAGTGTTCAGACTAG---GAC--TAGGTGGCCATAACCATAGTAGTA-CGCTTGC
+       :::    : : :: :  : :   ::   ::   :   : :: ::  :: ::  :: : : 
+Rosali GTCGTTCGAGGTCGGTATTGTCTGATCATAATAGCTAAGAAGCAG-GTCGTGTCGTTCGA
+             440       450       460       470        480       490
+
+        560                570       580       590       600       
+Rosali GGGCCACATTATC---------AGGTGGCGATGAGGTCACACAGAGAAACTGACATAATG
+       :: :   ::: ::         :::  :::: : :: : : : : : : :    : : : 
+Rosali GGTCGGTATTGTCTGATCGGGGAGGGAGCGAAGTGG-CCCGCCG-GCACCACGAAGAGTC
+              500       510       520        530        540        
+
+       610       620       630       640       650       660       
+Rosali CGGCTTTCACTGTCACGACGCGCAACCGCCTTAACCGATGAGAGCCAACGAACCGACGAA
+        ::::    : :::    : ::: :  : ::  :::::  :::::  ::::   :  :: 
+Rosali TGGCTAATGCAGTCGATCCTCGCCAG-GGCTCGACCGA--AGAGCAGACGATGTGGAGAG
+      550       560       570        580         590       600     
+
+       670       680       690           700       710       720   
+Rosali GACGACGCGCTACAATTTCGCGGAATGGCGTC----GACCTTTTCGGAAAGAAGCAGGTC
+       :   :     : : ::  :  :::  : :: :    :::  :   :   :::::::::::
+Rosali GCATA-----TTCCATCCCTAGGATGGACGACACGTGACAATAA-GCCTAGAAGCAGGTC
+         610            620       630       640        650         
+
+           730       740       750       760       770    
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCTAATGAGATGAGTGAATTCGGT
+       ::::::::::::::::::::::::::::: :: : : ::  ::::   :::
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCAAAGGCGGTG--TGAAGCAGGT
+     660       670       680       690         700        
+
+>--
+ Waterman-Eggert score: 267;  62.3 bits; E(1) <  1.4e-13
+60.4% identity (60.4% similar) in 336 nt overlap (421-752:70-360)
+
+              430       440       450       460       470       480
+Rosali TTGTCTGATCAGATCGGATTTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATC
+       ::: :  ::::  ::  :: ::::::::::::::::::::::::::::::::::::::::
+Rosali TTGGCGCATCAAGTCA-ATGTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATC
+      70        80         90       100       110       120        
+
+              490       500       510       520       530       540
+Rosali AGCCGTGTGAGGAAATCGTAATGTCTGCAGTGTTCAGACTAGGACTAGGTGGCCATAACC
+       ::     :  ::: : ::  :       ::::   :   :::::::    :        :
+Rosali AGATAGTTCCGGAGACCGATA-------AGTGCCTA---TAGGACTCACGG--------C
+      130       140              150          160               170
+
+              550       560       570       580       590       600
+Rosali ATAGTAGTACGCTTGCGGGCCACATTATCAGGTGGCGATGAGGTCACACAGAGAAACTGA
+         ::::   ::  :     :: :: : : :  ::: : ::  :::: :: :    :::::
+Rosali GGAGTATATCGAAT-----CCTCAGT-TAA--TGGTGCTG--GTCATACCGT---ACTGA
+              180            190          200         210          
+
+               610       620        630       640       650        
+Rosali CATA-ATGCGGCTTTCACTGTCACGACG-CGCAACCGCCTTAACCGATGAGAGCCAACGA
+       : :: : :: : :      ::  ::: : ::  :  : :: : :   :: : :   : ::
+Rosali CTTAGAAGCAGGTCGTGTCGTT-CGAGGTCGGTATTGTCTGATC---TGGGCGGGGATGA
+       220       230        240       250       260          270   
+
+      660       670       680       690         700       710      
+Rosali ACCGACGAAGACGACGCGCTACAATTTCGCGGAATGGCG--TCGACCTTTTCGGAAAGAA
+       : :    : : ::   :: : : :  ::: : : :: :   ::::::    ::    :::
+Rosali AGC----AGGTCGTGTCG-TTCGAGGTCG-GTATTGTCTGATCGACCA---CGAGGCGAA
+               280        290        300       310          320    
+
+        720       730       740       750  
+Rosali GCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATC
+       ::::::::::::::::::::::::::::::::::::
+Rosali GCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATC
+          330       340       350       360
+
+>--
+ Waterman-Eggert score: 249;  58.4 bits; E(1) <  2.2e-12
+57.4% identity (57.4% similar) in 399 nt overlap (388-764:86-470)
+
+       390       400       410       420       430       440       
+Rosali ACGCGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATTTGAAGCA
+       : : ::::::::::::::::::::::::::::::::::::::::::: :     ::  : 
+Rosali ATGTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATAGTTCCGGAGACC
+          90       100       110       120       130       140     
+
+       450        460            470        480       490       500
+Rosali GGTC-GTGTCGTTCG-----AGGTCGGTAT-TGTCTGATCAGCCGTGTGAGGAAATCGTA
+       : :  ::: :  : :     : : :::  : : ::  :::  : ::    ::   : :: 
+Rosali GATAAGTGCCTATAGGACTCACGGCGGAGTATATCGAATCCTCAGTTAATGGTGCTGGTC
+         150       160       170       180       190       200     
+
+               510       520          530       540       550      
+Rosali ATGTC-TGCAGTGTTCAGACTAGGAC---TAGGTGGCCATAACCATAGTAGTACGCTTGC
+       ::  : : : :  ::   :  ::: :   : : : :   :    :: ::   :     ::
+Rosali ATACCGTACTGACTTAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTGGGC
+         210       220       230       240       250       260     
+
+        560       570           580        590       600           
+Rosali GGGCCACATTATCAGGTGG---CGAT-GAGGTCAC-ACAGAGAAACTGAC-ATAATGCG-
+       :::    :  : ::::: :   :: : ::::::   :  :    :  ::: :  : ::: 
+Rosali GGGGATGA--AGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCGACCACGAGGCGA
+         270         280       290       300       310       320   
+
+      610       620          630       640       650       660     
+Rosali -GCTTTCACTGTCA--CGACG-CGCAACCGCCTTAACCGATGAGAGCCAACGAACCGACG
+        ::      ::::   ::: : ::  :  : :: : :   ::     ::: : : :   :
+Rosali AGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCATCTGCTTCTCAA-GTAGCTCTG
+           330       340       350       360       370        380  
+
+         670       680       690       700       710       720     
+Rosali AAGACGACGCGCTACAATTTCGCGGAATGGCGTCGACCTTTTCGGAAAGAAGCAGGTCGT
+        :: : : : : :  : ::::: : :: : ::::: :        :  ::::::::::::
+Rosali TAG-CCAGGAGATGTA-TTTCGTG-AAGGACGTCGTC--------AGGGAAGCAGGTCGT
+             390        400        410               420       430 
+
+         730       740       750       760    
+Rosali GTCGTTCGAGGTCGGTATTGTCTGATCTAATGAGATGAG
+       :::::::::::::::::::::::::::  :  :: : ::
+Rosali GTCGTTCGAGGTCGGTATTGTCTGATCATAATAGCTAAG
+             440       450       460       470
+
+>--
+ Waterman-Eggert score: 241;  56.6 bits; E(1) <  7.5e-12
+57.4% identity (57.4% similar) in 329 nt overlap (442-754:420-740)
+
+             450       460       470       480       490        500
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGCCGTGTGAGGAAATCG-TA
+       ::::::::::::::::::::::::::::::::::::::::     :  : :::   : : 
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCATAATAGCTAAGAAGCAGGTC
+     420       430       440       450       460       470         
+
+              510       520       530       540       550       560
+Rosali ATGTCTGCAGTGTTCAGACTAGGACTAGGTGGCCATAACCATAGTAGTACGCTTGCGGGC
+        ::::    : : :: :  : :    :   ::     : :  ::: :  :::     :::
+Rosali GTGTCGTTCGAGGTCGGTATTGTCTGATCGGGGAGGGAGCGAAGTGGCCCGCC----GGC
+     480       490       500       510       520       530         
+
+              570         580       590           600       610    
+Rosali CACATTATCAGG-TGGCGA-TGAGGTCACACAGAGAAA---CT-GACATAATGCGGCTTT
+         ::  :  ::  :::: : ::  :::   :   :  :   :: :::  ::    ::   
+Rosali ACCACGAAGAGTCTGGCTAATGCAGTCGATCCTCGCCAGGGCTCGACCGAAG--AGCAGA
+         540       550       560       570       580         590   
+
+          620       630         640         650          660       
+Rosali CACTGTCACGACGCGCAACCG--CCTTA--ACCGATGAGA---GCCAACGAACCGACGAA
+       :  :::   :: ::  :  :   :: ::  :  :: :: :   : :::  : :: :  : 
+Rosali CGATGTGGAGAGGCATATTCCATCCCTAGGATGGACGACACGTGACAATAAGCCTAGAAG
+           600       610       620       630       640       650   
+
+       670         680       690       700       710       720     
+Rosali GACGACGCGC--TACAATTTCGCGGAATGGCGTCGACCTTTTCGGAAAGAAGCAGGTCGT
+        : : :: :   : : :  :::  : :: :  :   :     :::   ::::::::::::
+Rosali CAGGTCGTGTCGTTCGAGGTCG--GTATTGTCTGATCAAAGGCGGTGTGAAGCAGGTCGT
+           660       670         680       690       700       710 
+
+         730       740       750    
+Rosali GTCGTTCGAGGTCGGTATTGTCTGATCTA
+       ::::::::::::::::::::::::::: :
+Rosali GTCGTTCGAGGTCGGTATTGTCTGATCCA
+             720       730       740
+
+>--
+ Waterman-Eggert score: 231;  54.4 bits; E(1) <  3.4e-11
+55.5% identity (55.5% similar) in 366 nt overlap (390-752:169-508)
+
+     390       400       410       420        430       440        
+Rosali GCGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTG-TCTGATCAGATCGGATTTGAAGCAG
+       ::: :: :  :::  :: :  :     :::  :: ::  : :  :  :  :: :::::::
+Rosali GCGGAGTATATCGAATCCTCAGTTAATGGTGCTGGTCATACCGTACTGACTTAGAAGCAG
+      170       180       190       200       210       220        
+
+      450       460       470       480       490        500       
+Rosali GTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGCCGTGTGAGGAAATCG-TAATGTCTG
+       :::::::::::::::::::::::::::::::: :    : :: :::   : :  ::::  
+Rosali GTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTGGGCGGGGATGAAGCAGGTCGTGTC--
+      230       240       250       260       270       280        
+
+       510       520       530       540       550       560       
+Rosali CAGTGTTCAGACTAGGACTAGGTGGCCATAACCATAGTAGTACGCTTGCGGGCCACATTA
+           ::::    : ::  : :   :    : :   ::  : :     :: :: :   :  
+Rosali ----GTTCGAGGTCGGTATTGTCTGATCGACCACGAGGCGAA-----GCAGGTCGTGTCG
+            290       300       310       320            330       
+
+       570       580       590       600        610       620      
+Rosali TCAGGTGGCGATGAGGTCACACAGAGAAACTGACA-TAATGCGGCTTTCACTGTCACGAC
+       :  :  : :: :   :::     ::  : :::    : : :  ::: :    : :: :: 
+Rosali TTCGAGGTCGGTATTGTCT----GATCATCTGCTTCTCAAGTAGCTCTGTA-GCCAGGAG
+       340       350           360       370       380        390  
+
+        630       640       650       660       670       680      
+Rosali GCGCAACCGCCTTAACCGATGAGAGCCAACGAACCGACGAAGACGACGCGCTACAATTTC
+         : :     : : :  :: :   : ::  ::: :    : : ::   :: :  :  :  
+Rosali ATGTATT--TCGTGAAGGACGTC-GTCAGGGAAGC----AGGTCGTGTCGTTCGAGGT--
+              400       410        420           430       440     
+
+        690       700       710       720       730       740      
+Rosali GCGGAATGGCGTCGACCTTTTCGGAAAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGT
+        ::: :: :  :   : :  : :  :::::::::::::::::::::::::::::::::::
+Rosali -CGGTATTGTCTGATCATAATAGCTAAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGT
+            450       460       470       480       490       500  
+
+        750  
+Rosali CTGATC
+       ::::::
+Rosali CTGATC
+             
+
+>--
+ Waterman-Eggert score: 215;  50.9 bits; E(1) <  3.9e-10
+87.9% identity (87.9% similar) in 58 nt overlap (440-494:648-705)
+
+     440       450       460       470       480          490    
+Rosali TTGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCA---GCCGTGTGAGGAA
+       : ::::::::::::::::::::::::::::::::::::::::   :: :::::: : :
+Rosali TAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAAAGGCGGTGTGAAGCA
+       650       660       670       680       690       700     
+
+>--
+ Waterman-Eggert score: 205;  48.7 bits; E(1) <  1.8e-09
+100.0% identity (100.0% similar) in 41 nt overlap (713-753:221-261)
+
+            720       730       740       750   
+Rosali AGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCT
+       :::::::::::::::::::::::::::::::::::::::::
+Rosali AGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCT
+              230       240       250       260 
+
+>--
+ Waterman-Eggert score: 203;  48.2 bits; E(1) <  2.5e-09
+93.5% identity (93.5% similar) in 46 nt overlap (709-754:267-312)
+
+      710       720       730       740       750    
+Rosali GGAAAGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTA
+       :: : ::::::::::::::::::::::::::::::::::::::: :
+Rosali GGGATGAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCGA
+        270       280       290       300       310  
+
+>--
+ Waterman-Eggert score: 198;  47.1 bits; E(1) <  5.3e-09
+85.2% identity (85.2% similar) in 54 nt overlap (392-445:470-523)
+
+             400       410       420       430       440     
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGATCGGATTTGAAG
+       ::::::::::::::::::::::::::::::::::::::: :   ::    ::::
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCGGGGAGGGAGCGAAG
+     470       480       490       500       510       520   
+
+>--
+ Waterman-Eggert score: 197;  46.9 bits; E(1) <  6.2e-09
+95.3% identity (95.3% similar) in 43 nt overlap (714-756:90-132)
+
+           720       730       740       750      
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTAAT
+       :::::::::::::::::::::::::::::::::::::::  ::
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGAT
+      90       100       110       120       130  
+
+>--
+ Waterman-Eggert score: 197;  46.9 bits; E(1) <  6.2e-09
+95.3% identity (95.3% similar) in 43 nt overlap (392-434:750-792)
+
+             400       410       420       430    
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCAGAT
+       :::::::::::::::::::::::::::::::::::::::  ::
+Rosali GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTGTCTGATCTAAT
+     750       760       770       780       790  
+
+>--
+ Waterman-Eggert score: 91;  23.6 bits; E(1) <  0.063
+57.9% identity (57.9% similar) in 95 nt overlap (349-442:360-451)
+
+      350        360       370       380       390       400       
+Rosali CATCAGCTT-TCAAATCAGTGTTCCCTCAAGGGATGCTTGACGCGAAGCAGGTCGTGTCG
+       :::: :::: :::: :   : :     :: : ::::  :  :: :::: : :::::   :
+Rosali CATCTGCTTCTCAAGTAGCTCTGTAGCCAGGAGATGTATTTCGTGAAGGACGTCGTCAGG
+     360       370       380       390       400       410         
+
+       410       420       430       440  
+Rosali TTCGAGGTCGGTATTGTCTGATCAGATCGGATTTG
+          :: :  :::  ::::     :: ::::  :::
+Rosali ---GAAGCAGGTCGTGTCGTTCGAGGTCGGTATTG
+        420       430       440       450 
+
+
+
+898 residues in 1 query   sequences
+904 residues in 1 library sequences
+ Scomplib [36.3.8h Aug, 2019]
+ start: Thu Apr 22 11:45:11 2021 done: Thu Apr 22 11:45:12 2021
+ Total Scan time:  0.110 Total Display time:  0.230
+
+Function used was LALIGN [36.3.8h Aug, 2019]
