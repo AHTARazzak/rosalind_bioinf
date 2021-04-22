@@ -1,8 +1,8 @@
 '''
-Title: Creating a Distance Matrix
-Rosalind ID: PDST
-URL: http://rosalind.info/problems/pdst
-Goal: The matrix D corresponding to the p-distance dp on the given strings. As always, note that your answer is allowed an absolute error of 0.001.
+Title: Comparing Spectra with the Spectral Convolution
+Rosalind ID: CONV
+URL: http://rosalind.info/problems/conv
+Goal: The largest multiplicity of S1⊖S2, as well as the absolute value of the number x maximizing (S1⊖S2)(x) (you may return any such value if multiple solutions exist).
 '''
 from Bio import SeqIO, Seq
 import re
