@@ -11,3 +11,5 @@ import sys
 os.system("clustalo --outfmt=fa --output-order=tree-order --force -i " + sys.argv[1] + " -o CLUS.output")
 
 print(open("CLUS.output").readlines()[0][1:])
+
+#Ali Razzak
