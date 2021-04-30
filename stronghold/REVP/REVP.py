@@ -1,8 +1,15 @@
+'''
+Title: Locating Restriction Sites
+Rosalind ID: REVP
+URL: http://rosalind.info/problems/revp
+Goal: to return the position and length of every reverse palindrome in sequence between lengths 4 and 12.
+'''
+
 from Bio import SeqIO
 import re
 import sys
 
-palindrone_initiate = ["AATT", "TATA", "GATC", "CATG", "TTAA", "ATAT", "GTAC", "CTAG", "GGCC", "CGCG", "AGCT", "TGCA", "CCGG", "GCGC", "AGCT", "TGCA"]
+palindrone_initiate = ["AATT", "TATA", "GATC", "CATG", "TTAA", "ATAT", "GTAC", "CTAG", "GGCC", "CGCG", "AGCT", "TGCA", "CCGG", "GCGC", "ACGT", "TCGA"]
 palindrone_pairs = ["AT", "TA", "GC", "CG"]
 all_palindrone = []
 no_duplicates_palindrone_raw = []
@@ -15,7 +22,7 @@ with open(sys.argv[1]) as fasta_file:
 		for this_palindrone in pos_palindrone:
 			check_next = 2
 			palin_length = 4
-			for i in range(4):
+			for i in range(5):
 				if ((this_palindrone - check_next) > -1) and ((this_palindrone + check_next + 1) < len(the_sequence)):
 					if (the_sequence[(this_palindrone - check_next)] + the_sequence[(this_palindrone + check_next + 1)]) in palindrone_pairs:
 						check_next += 1
@@ -43,8 +50,10 @@ for raw_palindrone in no_duplicates_palindrone_raw:
 
 final_list = (adjusted_pali + old_excluded_list)
 
+print(final_list)
+final_list.sort(key = lambda x: int(x.split()[0]))
 comb_file = open("sub_file.txt", "a")
 for i in final_list:
 	comb_file.write(i + "\n")
 
-#TCAGATCATGCGGGTCTATATGCAT
+#Ali Razzak
