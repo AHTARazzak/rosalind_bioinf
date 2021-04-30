@@ -1,3 +1,10 @@
+'''
+Title: Computing GC Content
+Rosalind ID: GC
+URL: http://rosalind.info/problems/gc
+Goal: The ID of the string having the highest GC-content, followed by the GC-content of that string. Rosalind allows for a default error of 0.001 in all decimal answers unless otherwise stated; please see the note on absolute error below.
+'''
+
 from Bio import SeqIO
 from Bio.SeqUtils import GC
 
@@ -17,3 +24,5 @@ with open(the_fasta_file) as fasta_file:
 
 print(highest_desc)
 print("%.5f" % highest_GC)
+
+#Ali Razzak

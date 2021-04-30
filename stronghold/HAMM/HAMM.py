@@ -1,3 +1,10 @@
+'''
+Title: Counting Point Mutations
+Rosalind ID: HAMM
+URL: http://rosalind.info/problems/hamm
+Goal: The Hamming distance dH(s,t).
+'''
+
 the_compare_file = input("Name of file please: ")
 
 compare_file = open(the_compare_file, 'r')
@@ -14,3 +21,5 @@ for i in range(len(seq_1)):
 		mismatch += 1
 
 print(mismatch)
+
+#Ali Razzak

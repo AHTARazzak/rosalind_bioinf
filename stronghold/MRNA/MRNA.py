@@ -1,3 +1,9 @@
+'''
+Title: Inferring mRNA from Protein
+Rosalind ID: MRNA
+URL: http://rosalind.info/problems/mrna
+Goal: The total number of different RNA strings from which the protein could have been translated, modulo 1,000,000. (Don't neglect the importance of the stop codon in protein translation.)
+'''
 # This script does not dynamically eliminate STOP codons, which my more ambitious one tries to do... at a huge computational cost :()
 
 from functools import reduce
@@ -32,3 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+#Ali Razzak

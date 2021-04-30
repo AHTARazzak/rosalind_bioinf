@@ -4,6 +4,7 @@ Rosalind ID: SPEC
 URL: http://rosalind.info/problems/spec
 Goal: A protein string of length n−1 whose prefix spectrum is equal to L (if multiple solutions exist, you may output any one of them). Consult the monoisotopic mass table.
 '''
+
 import sys
 
 the_table = open("mass_table.txt", "r")
@@ -28,5 +29,4 @@ for line in these_masses:
 		masses_list.pop(0)
 				
 print(the_aa)
-
 #Ali Razzak

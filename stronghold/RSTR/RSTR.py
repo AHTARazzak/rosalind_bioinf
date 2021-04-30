@@ -1,3 +1,10 @@
+'''
+Title: Matching Random Motifs
+Rosalind ID: RSTR
+URL: http://rosalind.info/problems/rstr
+Goal: The probability that if N random DNA strings having the same length as s are constructed with GC-content x (see “Introduction to Random Strings”), then at least one of the strings equals s. We allow for the same random string to be created more than once.
+'''
+
 import sys
 import numpy as np
 
@@ -17,8 +24,4 @@ for nt in the_seq:
 		cumulative_stat = cumulative_stat * prob_gc
 
 print(round(1-((1-cumulative_stat)**the_num),3))
-
-#print(" ".join(probability_list))
-
-#outfile = open("submit.txt", "w")
-#outfile.write(" ".join(probability_list))
+#Ali Razzak

@@ -1,3 +1,10 @@
+'''
+Title: Finding a Shared Motif
+Rosalind ID: LCSM
+URL: http://rosalind.info/problems/lcsm
+Goal: A longest common substring of the collection. (If multiple solutions exist, you may return any single solution.)
+'''
+
 from Bio import SeqIO                      
 sequences = []                             
 handle = open('rosalind_lcsm.txt', 'r')
@@ -27,6 +34,8 @@ for i in range(len(short_seq)):
         if found and len(m) > len(motif):
             motif = m                    
 print(motif)
+
+#Ali Razzak
 
 '''
 #s.system("clustalo -i " + sys.argv[1] + " --outfmt=clu -o output_file.txt --force")

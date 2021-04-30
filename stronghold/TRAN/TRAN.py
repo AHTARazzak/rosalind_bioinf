@@ -1,3 +1,10 @@
+'''
+Title: Transitions and Transversions
+Rosalind ID: TRAN
+URL: http://rosalind.info/problems/tran
+Goal: Transitions and Transversions
+'''
+
 from Bio import SeqIO, Seq
 import re
 import sys
@@ -29,3 +36,4 @@ for i in range(len(sequence_one)):
 		transit_score += +1
 
 print(round(transit_score/transver_score,11))
+#Ali Razzak

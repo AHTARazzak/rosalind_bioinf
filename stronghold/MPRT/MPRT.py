@@ -1,3 +1,10 @@
+'''
+Title: Finding a Protein Motif
+Rosalind ID: MPRT
+URL: http://rosalind.info/problems/mprt
+Goal: For each protein possessing the N-glycosylation motif, output its given access ID followed by a list of locations in the protein string where the motif can be found.
+'''
+
 import sys
 import requests
 import re
@@ -22,3 +29,4 @@ for protein in read_proteins:
 			string_list += str(index +1) + " "
 		out_file.write(protein + "\n")
 		out_file.write(string_list[:-1] + "\n")
+#Ali Razzak

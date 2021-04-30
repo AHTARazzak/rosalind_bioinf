@@ -1,3 +1,10 @@
+'''
+Title: Overlap Graphs
+Rosalind ID: GRPH
+URL: http://rosalind.info/problems/grph
+Goal: The adjacency list corresponding to O3. You may return edges in any order.
+'''
+
 from Bio import SeqIO
 from Bio.SeqUtils import GC
 
@@ -21,3 +28,5 @@ for rec_id, rec_seq in record_dictionary.items():
 			if rec_seq[-3:] == listed_seq[:3]:
 				found_seq = seq_list.index(listed_seq)
 				out_file.write(rec_id + " " + id_list[found_seq] + "\n")
+
+#Ali Razzak

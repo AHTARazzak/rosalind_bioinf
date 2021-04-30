@@ -1,3 +1,10 @@
+'''
+Title: Enumerating Gene Orders
+Rosalind ID: PERM
+URL: http://rosalind.info/problems/perm
+Goal: The total number of permutations of length n, followed by a list of all such permutations (in any order).
+'''
+
 import sys
 
 the_number =  open(sys.argv[1], "r").read()
@@ -32,3 +39,4 @@ for this_row in result:
 	for element in this_row:
 		row_string += (element + " ")
 	output_file.write(row_string + "\n")
+#Ali Razzak

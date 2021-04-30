@@ -1,3 +1,10 @@
+'''
+Title: Finding a Motif in DNA
+Rosalind ID: SUBS
+URL: http://rosalind.info/problems/subs
+Goal: All locations of t as a substring of s.
+'''
+
 the_content_file = input("Name of file please: ")
 the_file_content = open(the_content_file, 'r')
 the_content = the_file_content.read().split()
@@ -19,3 +26,4 @@ for i in positions_found[1:]:
 	final_string += str(i) + " "
 
 print(final_string)
+#Ali Razzak

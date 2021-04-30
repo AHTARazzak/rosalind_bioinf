@@ -1,3 +1,10 @@
+'''
+Title: Calculating Expected Offspring
+Rosalind ID: IEV
+URL: http://rosalind.info/problems/iev
+Goal: The expected number of offspring displaying the dominant phenotype in the next generation, under the assumption that every couple has exactly two offspring.
+'''
+
 stat_file = input("Name of file please: ")
 open_stat = open(stat_file, 'r')
 the_stats = open_stat.read()
@@ -22,6 +29,5 @@ if coupling_list_int[3] > 0:
 if coupling_list_int[4] > 0:
 	off_spring_dom_chance += 0.5 * (coupling_list_int[4] / parent_num)
 
-
-
 print(round(off_spring_dom_chance * offspring_num, 1))
+#Ali Razzak

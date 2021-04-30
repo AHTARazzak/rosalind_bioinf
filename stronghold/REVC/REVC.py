@@ -1,3 +1,10 @@
+'''
+Title: Complementing a Strand of DNA
+Rosalind ID: REVC
+URL: http://rosalind.info/problems/revc
+Goal: The reverse complement sc of s.
+'''
+
 nucleotide_allowed = ["A", "T", "G", "C"]
 
 the_sequence_file = input("Name of file please: ")
@@ -6,20 +13,18 @@ sequence_file = open(the_sequence_file, 'r')
 
 the_sequence = sequence_file.read()
 
-A_count = 0
-T_count = 0
-G_count = 0
-C_count = 0
+complement_sequence = ""
 
 for nucleotide in the_sequence:
 	if nucleotide in nucleotide_allowed:
 		if nucleotide == "A":
-			A_count += 1
+			complement_sequence += "T"
 		elif nucleotide == "T":
-			T_count += 1
+			complement_sequence += "A"
 		elif nucleotide == "G":
-			G_count += 1
+			complement_sequence += "C"
 		elif nucleotide == "C":
-			C_count += 1
+			complement_sequence += "G"
 
-print(str(A_count) + " " + str(C_count) + " " + str(G_count) + " " + str(T_count))
+print(complement_sequence[::-1])
+#Ali Razzak

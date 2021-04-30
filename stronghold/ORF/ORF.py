@@ -1,3 +1,10 @@
+'''
+Title: Open Reading Frames
+Rosalind ID: ORF
+URL: http://rosalind.info/problems/orf
+Goal: Every distinct candidate protein string that can be translated from ORFs of s. Strings can be returned in any order.
+'''
+
 from Bio import SeqIO
 import re
 import sys
@@ -75,6 +82,6 @@ with open(sys.argv[1]) as fasta_file:
 					protein_list_good.append(protein)
 					final_string += protein + "\n"
 
-
 print(final_string)
 final_list.write(final_string)
+#Ali Razzak

@@ -1,3 +1,10 @@
+'''
+Title: Calculating Protein Mass
+Rosalind ID: PRTM
+URL: http://rosalind.info/problems/prtm
+Goal: The total weight of P. Consult the monoisotopic mass table.
+'''
+
 import sys
 
 conv_mass_table = {}
@@ -15,3 +22,4 @@ with open(sys.argv[1]) as this_sequence:
 
 
 print(round(total_mass,3))
+#Ali Razzak

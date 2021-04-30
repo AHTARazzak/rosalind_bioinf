@@ -55,3 +55,4 @@ outputhandle = open(os.path.join(os.path.split(os.getcwd())[0],"LGIS", "submit.t
 outputhandle.write(' '.join(LIS) + '\n')
 outputhandle.write(' '.join(LDS))
 outputhandle.close()
+#Ali Razzak

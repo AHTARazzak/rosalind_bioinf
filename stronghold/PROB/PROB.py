@@ -1,3 +1,10 @@
+'''
+Title: Introduction to Random Strings
+Rosalind ID: PROB
+URL: http://rosalind.info/problems/prob
+Goal: An array B having the same length as A in which B[k] represents the common logarithm of the probability that a random string constructed with the GC-content found in A[k] will match s exactly.
+'''
+
 import sys
 import numpy as np
 
@@ -24,3 +31,4 @@ print(" ".join(probability_list))
 
 outfile = open("submit.txt", "w")
 outfile.write(" ".join(probability_list))
+#Ali Razzak

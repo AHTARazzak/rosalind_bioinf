@@ -1,3 +1,10 @@
+'''
+Title: Enumerating k-mers Lexicographically
+Rosalind ID: LEXF
+URL: http://rosalind.info/problems/lexf
+Goal: All strings of length n that can be formed from the alphabet, ordered lexicographically (use the standard order of symbols in the English alphabet).
+'''
+
 import sys
 
 data_file = open(sys.argv[1]).readlines()
@@ -37,3 +44,4 @@ print(STRING_LIST)
 outfile = open("submit_this.txt", "w")
 
 outfile.write("\n".join(STRING_LIST))
+#Ali Razzak

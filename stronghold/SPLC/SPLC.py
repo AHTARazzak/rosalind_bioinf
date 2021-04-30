@@ -1,3 +1,10 @@
+'''
+Title: RNA Splicing
+Rosalind ID: SPLC
+URL: http://rosalind.info/problems/splc
+Goal: A protein string resulting from transcribing and translating the exons of s. (Note: Only one solution will exist for the dataset provided.)
+'''
+
 from Bio import SeqIO, Seq
 import re
 import sys
@@ -24,3 +31,4 @@ main_seq = main_seq.replace("-","")
 
 print(len(main_seq))
 print(main_seq)
+#Ali Razzak

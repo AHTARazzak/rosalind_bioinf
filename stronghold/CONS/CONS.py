@@ -1,3 +1,10 @@
+'''
+Title: Consensus and Profile
+Rosalind ID: CONS
+URL: http://rosalind.info/problems/cons
+Goal: A consensus string and profile matrix for the collection. (If several possible consensus strings exist, then you may return any one of them.)
+'''
+
 from Bio import SeqIO
 from Bio.SeqUtils import GC
 
@@ -32,7 +39,6 @@ with open(the_fasta_file) as fasta_file:
 			if str(record.seq)[element] == "G":
 				G_mat[element] = G_mat[element] + 1
 
-#pos_freq = 
 consensus_seq = ""
 
 for position in range(matrix_length):
@@ -53,3 +59,5 @@ out_file.write("A: " + print_list(A_mat)[:-1] + "\n")
 out_file.write("C: " + print_list(C_mat)[:-1] + "\n")
 out_file.write("G: " + print_list(G_mat)[:-1] + "\n")
 out_file.write("T: " + print_list(T_mat)[:-1])
+
+#Ali Razzak

@@ -1,3 +1,9 @@
+'''
+Title: Ordering Strings of Varying Length Lexicographically
+Rosalind ID: LEXV
+URL: http://rosalind.info/problems/lexv
+Goal: All strings of length at most n formed from 𝒜, ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)
+'''
 
 from itertools import product
 import sys
@@ -15,3 +21,4 @@ for perm in product(symbols, repeat=length):
 output_file = open("submit.txt", 'w')
 for entry in perms:
     print >> output_file, ''.join(entry)
+#Ali Razzak

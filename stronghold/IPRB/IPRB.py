@@ -1,3 +1,10 @@
+'''
+Title: Mendel's First Law
+Rosalind ID: IPRB
+URL: http://rosalind.info/problems/iprb
+Goal: The probability that two randomly selected mating organisms will produce an individual possessing a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.
+'''
+
 the_pop_file = input("Name of file please: ")
 
 pop_file = open(the_pop_file, 'r')
@@ -26,3 +33,4 @@ if (hom_rec > 0) and (hom_dom > 0):
 	hom_rec_dom = (hom_rec/pop_size) * (hom_dom/(pop_size-1))
 
 print("%.5f" % (dom + hetero_dom + (2*hetero_dom_rec) + hetero_hetero + hom_rec_dom))
+#Ali Razzak
