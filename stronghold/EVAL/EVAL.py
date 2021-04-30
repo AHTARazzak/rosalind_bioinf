@@ -1,8 +1,8 @@
 '''
-Title: Introduction to Random Strings
-Rosalind ID: PROB
-URL: http://rosalind.info/problems/prob
-Goal: An array B having the same length as A in which B[k] represents the common logarithm of the probability that a random string constructed with the GC-content found in A[k] will match s exactly.
+Title: Expected Number of Restriction Sites
+Rosalind ID: EVAL
+URL: http://rosalind.info/problems/eval
+Goal:  An array B having the same length as A in which B[i] represents the expected number of times that s will appear as a substring of a random DNA string t of length n, where t is formed with GC-content A[i] (see “Introduction to Random Strings”).
 '''
 
 import sys
@@ -33,6 +33,6 @@ for gc_prob in the_prob:
 
 print(" ".join(probability_list))
 
-#outfile = open("submit.txt", "w")
-#outfile.write(" ".join(probability_list))
+outfile = open("submit.txt", "w")
+outfile.write(" ".join(probability_list))
 #Ali Razzak
