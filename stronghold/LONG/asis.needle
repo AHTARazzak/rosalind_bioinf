@@ -1,0 +1,35 @@
+########################################
+# Program: needle
+# Rundate: Sun  2 May 2021 12:17:46
+# Commandline: needle
+#    -asequence asis:ATTAGACCTG
+#    -bsequence asis:ATTAGACCTG
+# Align_format: srspair
+# Report_file: asis.needle
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: asis
+# 2: asis
+# Matrix: EDNAFULL
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 10
+# Identity:      10/10 (100.0%)
+# Similarity:    10/10 (100.0%)
+# Gaps:           0/10 ( 0.0%)
+# Score: 50.0
+# 
+#
+#=======================================
+
+asis               1 ATTAGACCTG     10
+                     ||||||||||
+asis               1 ATTAGACCTG     10
+
+
+#---------------------------------------
+#---------------------------------------

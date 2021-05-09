@@ -1,0 +1,39 @@
+########################################
+# Program: needle
+# Rundate: Sun  2 May 2021 12:31:40
+# Commandline: needle
+#    -asequence asis:GCCGGAATAC
+#    -bsequence asis:CCTGCCGGAA
+#    -gapopen 100
+#    -gapextend 10
+#    -awidth3 500
+#    -outfile cool_1.txt
+# Align_format: srspair
+# Report_file: cool_1.txt
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: asis
+# 2: asis
+# Matrix: EDNAFULL
+# Gap_penalty: 100.0
+# Extend_penalty: 10.0
+#
+# Length: 13
+# Identity:       7/13 (53.8%)
+# Similarity:     7/13 (53.8%)
+# Gaps:           6/13 (46.2%)
+# Score: 35.0
+# 
+#
+#=======================================
+
+asis               1 ---GCCGGAATAC     10
+                        |||||||   
+asis               1 CCTGCCGGAA---     10
+
+
+#---------------------------------------
+#---------------------------------------
