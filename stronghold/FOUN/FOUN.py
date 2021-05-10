@@ -1,8 +1,8 @@
 '''
-Title: Catalan Numbers and RNA Secondary Structures
+Title: The Founder Effect and Genetic Drift
 Rosalind ID: FOUN
 URL: http://rosalind.info/problems/foun
-Goal: The total number of noncrossing perfect matchings of basepair edges in the bonding graph of s, modulo 1,000,000.
+Goal: An m×k matrix B for which Bi,j represents the common logarithm of the probability that after i generations, no copies of the recessive allele for the j-th factor will remain in the population. Apply the Wright-Fisher model.
 '''
 from scipy.special import comb
 import numpy as np
