@@ -4,101 +4,51 @@ Rosalind ID: SORT
 URL: http://rosalind.info/problems/sort
 Goal: The reversal distance drev(π,γ), followed by a collection of reversals sorting π into γ. If multiple collections of such reversals exist, you may return any one.
 '''
-import random
+from itertools import product
+from itertools import compress
 import sys
 
-def _get_reverse_array(s):
-    reverse_arrays = []
-    for i in range(len(s)-1):
-        for j in range(i+1, len(s)):
-            r_list = s[i:j+1]
-            r_list.reverse()
-            reverse_arrays.append(s[:i] + r_list + s[j+1:])
-    return reverse_arrays
+def breakpoint_count(permutation):
+    permutation = [0] + list(permutation) + [len(permutation)+1]
 
-def _get_reversal_distance(s1, s2, distance, s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals):
-    if s1 & s2:
-        return s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance
-    new_s1 = set()
-    s1_s2 = {}
-    for s in s1:
-        reverse_arrays = _get_reverse_array(list(s))
-        s1_s2[s] = reverse_arrays
-        for r in reverse_arrays:
-            new_s1.add(tuple(r))
-    s1_s2_reversals_path.append(s1_s2)
-    new_s2 = set()
-    s2_s1 = {}
-    for s in s2:
-        reverse_arrays = _get_reverse_array(list(s))
-        s2_s1[s] = reverse_arrays
-        for r in reverse_arrays:
-            new_s2.add(tuple(r))
-    s2_s1_reversals_path.append(s2_s1)
-    distance += 2
-    if s1 & new_s2:
-        meet_reversals = list(s1 & new_s2)
-        return s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance-1
-    if s2 & new_s1:
-        meet_reversals = list(s2 & new_s1)
-        return s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance-1
-    if new_s1 & new_s2:
-        meet_reversals = list(new_s1 & new_s2)
-        return s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance
-    
-    s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance = _get_reversal_distance(new_s1, new_s2, distance, s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals)
-    return s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance
+    return sum(map(lambda x,y: abs(x-y) != 1, permutation[1:], permutation[:-1]))
 
-def _get_invert_endpoints(a, b):
-    a_reverse = []
-    for i in range(len(a)-1):
-        for j in range(i+1, len(a)):
-            a_reverse = a[:i] + a[i:j+1][::-1] + a[j+1:]
-            if a_reverse == b:
-                return i+1, j+1
 
-def _get_collections_of_reversals_sorting(s1_s2_reversals_path, meet_reversals, s2_s1_reversals_path):
-    collections_of_reversals_sorting = []
-    for l in meet_reversals:
-        collection_of_reversals_sorting=[]
-        current_array = list(l)
-        for reversals_path in s1_s2_reversals_path[::-1]:
-            for k, v in reversals_path.items():
-                if current_array in v:
-                    i, j =  _get_invert_endpoints(list(k), current_array)
-                    collection_of_reversals_sorting.append([i, j])
-                    current_array = list(k)
-                    break
-        collection_of_reversals_sorting = collection_of_reversals_sorting[::-1]
-        current_array = list(l)
-        for reversals_path in s2_s1_reversals_path[::-1]:
-            for k, v in reversals_path.items():
-                if current_array in v:
-                    i, j =  _get_invert_endpoints(list(k), current_array)
-                    collection_of_reversals_sorting.append([i, j])
-                    current_array = list(k)
-                    break
-        collections_of_reversals_sorting.append(collection_of_reversals_sorting)
-    return collections_of_reversals_sorting
-            
+def breakpoint_indices(permutation):
+    permutation = [0] + list(permutation) + [len(permutation)+1]
+    return compress(range(len(permutation)-1), map(lambda x,y: abs(x-y) != 1, permutation[1:], permutation[:-1]))
 
-a = open(sys.argv[1], 'r').read().split("\n")[0]
-b = open(sys.argv[1], 'r').read().split("\n")[1]
 
-distance, s1, s2 = 0, set(), set()
-s1.add(tuple(a)), s2.add(tuple(b))
-s1_s2_reversals_path = []
-s2_s1_reversals_path = []
-meet_reversals = []
-s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals, distance = _get_reversal_distance(s1, s2, distance, s1_s2_reversals_path, s2_s1_reversals_path, meet_reversals) # 4
-print("[INFO] the distance of reverse s1 to s2: {}".format(distance))
-    
-collections_of_reversals_sorting = _get_collections_of_reversals_sorting(s1_s2_reversals_path, meet_reversals, s2_s1_reversals_path)
-print("[INFO] the number of collections of reversals sorting π into γ: {}".format(len(collections_of_reversals_sorting)))
-a_collection = random.sample(collections_of_reversals_sorting, k=1)[0]
-print("[INFO] the reversal distance drev(π,γ): {}".format(len(a_collection)))
-print("A random collection of reversals sorting π into γ:")
-print(a_collection)
-print("done!")
+def greedy_breakpoint_bfs_sort(permutation):
+    rev_perm = lambda perm, i, j: perm[:i] + perm[i:j+1][::-1] + perm[j+1:]
+    permutation = tuple(permutation)
+    current_perms = {permutation:[]}
+    min_breaks = breakpoint_count(permutation)
+
+    while True:
+        new_perms = {}
+        for perm in current_perms.keys():
+            for rev_ind in product(breakpoint_indices(perm), repeat=2):
+                temp_perm = tuple(rev_perm(perm, rev_ind[0], rev_ind[1]-1))
+                temp_breaks = breakpoint_count(temp_perm)
+                temp_transformation = current_perms[perm] + [str(rev_ind[0]+1) + ' ' + str(rev_ind[1])]
+                if temp_breaks == 0:
+                    return temp_transformation
+                elif temp_breaks < min_breaks:
+                    min_breaks = temp_breaks
+                    new_perms = {temp_perm:temp_transformation}
+                elif temp_breaks == min_breaks:
+                    new_perms[temp_perm] = temp_transformation
+
+        current_perms = new_perms
+
+with open(sys.argv[1]) as input_data:
+    perms = [map(int, line.strip().split()) for line in input_data.readlines()]
+to_identity = {value:i+1 for i, value in enumerate(perms[1])}
+normalized_perm = [to_identity[value] for value in perms[0]]
+min_reversal = greedy_breakpoint_bfs_sort(normalized_perm)
+min_reversal = [str(len(min_reversal))] + min_reversal
+with open('submit.txt', 'w') as output_data:
+    output_data.write('\n'.join(min_reversal))
 
 #Ali Razzak
