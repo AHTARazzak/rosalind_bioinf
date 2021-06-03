@@ -66,3 +66,5 @@ with open(sys.argv[1], "r") as fa:
                 seq_string.append(str(seq_record.seq))
 s, t = seq_string
 res = EditDistanceAlignment(s, t)
+
+#Ali Razzak
