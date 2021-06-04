@@ -7,6 +7,7 @@ Goal: The maximum alignment score between s and t. Use:
 import sys
 from itertools import product
 from Bio.SubsMat.MatrixInfo import blosum62
+from Bio import SeqIO
 
 def get_max_alignment(s, t):
     sl, tl = len(s), len(t)
@@ -34,23 +35,13 @@ def get_max_alignment(s, t):
     return (m[(i, j)][0])
     
 if __name__ == '__main__':
-    results = list()
-    protein_str = str()
+    sequence_string = list()
+
+    with open (sys.argv[1],'r') as fa:
+        for seq_record  in SeqIO.parse(fa,'fasta'):
+            sequence_string.append(str(seq_record.seq))
     
-    with open(sys.argv[1]) as fp:
-        for line in fp:
-            line = line.rstrip()
-        
-            if line.startswith(">"):
-                if(protein_str != ""):
-                    results.append(protein_str)
-                    protein_str = str()
-            else:
-                protein_str += line
-                
-    results.append(protein_str)
-    
-    print (get_max_alignment(results[0], results[1]))
+    print (get_max_alignment(sequence_string[0], sequence_string[1]))
     
 
 #Ali Razzak
