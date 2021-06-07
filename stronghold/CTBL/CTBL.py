@@ -4,96 +4,72 @@ Rosalind ID: CTBL
 URL: http://rosalind.info/problems/ctbl
 Goal: A character table having the same splits as the edge splits of T. The columns of the character table should encode the taxa ordered lexicographically; the rows of the character table may be given in any order. Also, for any given character, the particular subset of taxa to which 1s are assigned is arbitrary.
 '''
-import sys
-from numpy import zeros
 
-class Node(object):
-    def __init__(self, number, parent, name=None):
-        self.number = number
-        self.parent = parent
-        self.children = []
-        self.name = [name, 'Node_' + str(self.number)][name is None]
+from io import StringIO
+from Bio import Phylo
+import networkx
 
-    def __repr__(self):
-        return ['Node_' + str(self.number) + '('+str(self.name)+')', str(self.name)+'()'][self.name == 'Node_'+str(self.number)]
+def get_character_table(t):
+    chars = dict() 
+    char_matrix = list()
 
-    def add_child(self, child):
-        self.children.append(child)
+    t = Phylo.read(StringIO(t), 'newick')
 
+    for c in list(t.get_terminals()):
+        chars[c.name] = list()
+    
+    net = Phylo.to_networkx(t)
+    adj_matrix = networkx.adjacency_matrix(net)
+    tchars = list()
+    
+    for node in net.nodes(data=True):
+        tchars.append(str(node[0]))
 
-class Newick(object):
-    def __init__(self, data):
-        self.nodes = []
-        self.node_index = 0
-        self.edges = []
-        self.construct_tree(data)
-        self.name_index = {node.name: node.number for node in self.nodes}
-
-    def construct_tree(self, data):
-        data = data.replace(',', ' ').replace('(','( ').replace(')',' )').strip(';').split()
-        current_parent = Node(-1, None)
-        for item in data:
-            if item[0] == '(':
-                current_parent = Node(len(self.nodes), current_parent.number)
-                self.nodes.append(current_parent)
-                if len(self.nodes) > 1:
-                    self.nodes[current_parent.parent].add_child(current_parent.number)
-                    self.edges.append((current_parent.parent, current_parent.number))
-
-            elif item[0] == ')':
-                if len(item) > 1:
-                    current_parent.name = item[1:]
-                current_parent = self.nodes[current_parent.parent]
-
-            else:
-                self.nodes[current_parent.number].add_child(len(self.nodes))
-                self.edges.append((current_parent.number, len(self.nodes)))
-                self.nodes.append(Node(len(self.nodes), current_parent.number, item))
-
-    def edge_names(self):
-        return [(self.nodes[edge[0]].name, self.nodes[edge[1]].name) for edge in self.edges]
-
-    def distance(self, name1, name2):
-        if name1 == name2:
-            return 0
-
-        branch1 = [self.name_index[name1]]
-        branch2 = [self.name_index[name2]]
-        while self.nodes[branch1[-1]].parent != -1:
-            branch1.append(self.nodes[branch1[-1]].parent)
-        while self.nodes[branch2[-1]].parent != -1:
-            branch2.append(self.nodes[branch2[-1]].parent)
-
-        return len(set(branch1) ^ set(branch2)) + 1
-
-    def get_descendants(self, node_name):
-        descendants = []
-        for child in self.nodes[self.name_index[node_name]].children:
-            descendants.append(self.nodes[child].name)
-            descendants += self.get_descendants(self.nodes[child].name)
-
-        return descendants
-
-with open(sys.argv[1]) as input_data:
-    newick_input = input_data.read().strip()
-
-newick_tree = Newick(newick_input)
-
-named_nodes = lambda n: 'Node_' not in n
-unnamed_edges = lambda e: 'Node_' in e[0] and 'Node_' in e[1]
-
-node_order = {name:index for index,name in enumerate(sorted(filter(named_nodes, [node.name for node in newick_tree.nodes])))}
-
-nontrivial_edges = filter(unnamed_edges, newick_tree.edge_names())
-
-M = zeros((len(list(nontrivial_edges)), len(list(node_order))), dtype=int)
-for i, edge in enumerate(nontrivial_edges):
-    taxa = filter(named_nodes, set(newick_tree.get_descendants(edge[0])) & set(newick_tree.get_descendants(edge[1])))
-    for t in taxa:
-        M[i][node_order[t]] = 1
-
-with open('submit.txt', 'w') as output_data:
-    output_data.write('\n'.join([''.join(map(str, M[i])) for i in range(len(M))]))
-
+    for m in range(len(adj_matrix)): 
+        if adj_matrix[m,:].sum() == 3:
+            for i in range(m):
+                if (i != m) and (adj_matrix[i,:].sum() == 3) \
+                and (adj_matrix[i,m] == adj_matrix[m,i]) and (adj_matrix[i,m] == 1):
+                    adj_matrix[i,m] = 0
+                    adj_matrix[m,i] = 0
+                    
+                    net = networkx.from_numpy_matrix(adj_matrix)
+                    test1 = networkx.connected_components(net)
+                    
+                    for item in test1[0]:
+                        try:
+                            chars[tchars[int(item)]].append(1)
+                        except:
+                            continue
+                    for item in test1[1]:
+                        try:
+                            chars[tchars[int(item)]].append(0)
+                        except:
+                            continue
+                            
+                    adj_matrix[i,m] = 1
+                    adj_matrix[m,i] = 1
+    
+    for i in range(len(chars.items()[0][1])):
+        char_matrix.append([])
+        for j in range(len(chars)):
+            char_matrix[i].append(0)
+    
+    nn = 0
+    
+    for _, v in sorted(chars.items()) :
+        for j in range(len(v)):
+            char_matrix[j][nn] = v[j]
+        nn += 1
+    
+    for i in range(len(char_matrix)):
+        str1 = str()
+        
+        for j in range(len(char_matrix[i])):
+            str1 += str(int(char_matrix[i][j]))
+        print (str1) 
+        
+if __name__ == '__main__':
+    get_character_table('(dog,((elephant,mouse),robot),cat);')
 #Ali Razzak
 
